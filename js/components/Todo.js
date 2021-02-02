@@ -12,15 +12,21 @@ class Todo {
     add(text) {
         this.list.push({
             text: text,
-            complete: false
+            completed: false
         });
     }
     edit(index, newText) {
-        this.list[index] = newText;
+        this.list[index].text = newText;
     }
 
     // uzduoties pasalinimas
     remove(index){
+        if (index < 0 ||
+            index >= this.list.length){
+            console.error('ERROR'); 
+            return;   
+            }
+
         const filtered = [];
 
         for (let i=0; i<this.list.length; i++){
@@ -31,14 +37,13 @@ class Todo {
 
         //logic
 
-        this.list = unfiltered;
+        this.list = filtered;
     }
-    print (list) {
-        const printableList = list ? list : this.list;
-        console.table(printableList);
+    print (list = this.list) {
+        console.table(list);
     }
 
-    taskCompleted(index) {
+    taskCompleted(index) { 
         this.list[index].completed = true;
     }
 
@@ -51,6 +56,16 @@ class Todo {
             }
         }
         this.print(completed);
+    }
+    printNotCompletedOnly() {
+        const notCompleted = [];
+
+        for (const task of this.list) {
+            if (!task.completed) {
+                notCompleted.push(task);
+            }
+        }
+        this.print(notCompleted);
     }
 }
 

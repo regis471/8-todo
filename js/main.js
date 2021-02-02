@@ -1,6 +1,6 @@
 import {Todo} from './components/Todo.js';
 
-const blynai = new Todo('Random uzduotys');
+const blynai = new Todo('Blynu kepimas');
 
 blynai.add('Uzmaisyti tesla');
 blynai.add('Ijungti kaitlente');
@@ -12,17 +12,23 @@ blynai.add('Isjungti kaitlente');
 
 blynai.edit(0, 'Isplauti dubeni ir uzmaisyti tesla');
 
+
 blynai.remove(4);
-blynai.remove(0);
-blynai.taskCompleted(0);
+blynai.taskCompleted(2);
+blynai.taskCompleted(4);
+
+
 
 blynai.summary();
 
 
-console.log(blynai.list);
+// console.log(blynai.list);
 
 blynai.print();
 blynai.printCompletedOnly();
+blynai.printNotCompletedOnly();
+
+
 
 
 
@@ -56,15 +62,22 @@ blynai.printCompletedOnly();
 
 // default reiksmes = 1
 
-function daugyba(a = 1000, b = 1) {
-    return a * b;
-}
+// function daugyba(a = 1000, b = 1) {
+//     return a * b;
+// }
 
-console.log(daugyba (4, 5));
-console.log(daugyba (4));
+// console.log(daugyba (4, 5));
+// console.log(daugyba (4));
 
-console.log(daugyba (2, 7));
-console.log(daugyba (2));
+// console.log(daugyba (2, 7));
+// console.log(daugyba (2));
 
-console.log(daugyba ());
+// console.log(daugyba ());
 
+// function labas(name = 'zmogau') {
+//     console.log(`Labas, ${name}!`)
+// }
+
+// labas('Petrai')
+// labas('Onute')
+// labas()
