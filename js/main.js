@@ -28,9 +28,51 @@ blynai.print();
 blynai.printCompletedOnly();
 blynai.printNotCompletedOnly();
 
+console.clear();
 
 
+const a = [1, 2, 3, 4, 5, 6, 7, 8, 9 , 10];
+console.log(a);
 
+// kelimas kvadratu
+const aKvadratu = [];
+
+for (let i = 0; i < a.length; i++) {
+    aKvadratu.push(a[i] * a[i])
+}
+console.log(aKvadratu);
+
+
+// const bMap = a.map((number) => {return number * number});
+// console.log(bMap);
+// n = number
+// kelimas kvadratu
+const bMap = a.map(n =>  n * n);
+console.log(bMap);
+
+const lyginiai = [];
+for (let i=0; i<a.length; i++) {
+    if (a[i] % 2===0){
+        lyginiai.push(a[i]);
+    }
+}
+console.log(lyginiai);
+//lyginiu skaiciu istraukimas
+
+const cFilter = a.filter(n => n%2===0);
+console.log(cFilter);
+
+// lyginiu skaiciu kelimas kvadratu
+const lyginiuKvadratai = [];
+for (let i = 0; i<a.length; i++) {
+    if (a[i] % 2===0) {
+        lyginiuKvadratai.push(a[i] * a[i]);
+    }
+}
+console.log(lyginiuKvadratai);
+
+const dMapFilter = a.filter(n => n % 2===0).map(n => n * n);
+console.log(dMapFilter);
 
 
 
@@ -81,3 +123,32 @@ blynai.printNotCompletedOnly();
 // labas('Petrai')
 // labas('Onute')
 // labas()
+
+
+
+// ARROW FUNCTIONS
+
+// function suma(a, b){
+//     return a +b;
+// }
+// console.log(suma(4, 5));
+
+// const skirtumas = function  (a, b){
+//     return a - b;
+// }
+// console.log(skirtumas(4, 5));
+
+// //arrow funkcija
+// const daugyba = (a, b) =>{
+//     return a * b;
+// }
+// console.log(daugyba(4, 5));
+
+// const dalyba = (a, b) => a /  b;
+// console.log(dalyba(4, 5));
+// // jeigu veinas parametras galima nerasyti skliaustu
+// const kvadratu = a => a *  a;
+// console.log(kvadratu(4));
+
+
+
